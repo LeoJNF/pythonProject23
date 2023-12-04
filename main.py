@@ -18,7 +18,7 @@ browser = webdriver.Chrome(options=chrome_options)
 
 record = []
 e = []
-le = 0
+
 
 
 def extrair_informacoes(html_lista):
@@ -49,7 +49,7 @@ def extrair_avalicacoes(html_lista):
     return estrelas, avaliacoes
 
 def Selenium_extractor():
-
+    global le
     time.sleep(5)
     action = ActionChains(browser)
     a = browser.find_elements(By.CLASS_NAME, "hfpxzc")
@@ -100,7 +100,7 @@ def Selenium_extractor():
             continue
 
 
-
+le = 0
 browser.get(str(link))
 time.sleep(10)
 Selenium_extractor()
